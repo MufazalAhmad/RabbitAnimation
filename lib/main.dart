@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rabbit_pic/rabbit.dart';
 
-import 'rabbit2.dart';
 
 void main() {
   runApp(MyApp());
