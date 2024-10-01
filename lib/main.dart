@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rabbit_pic/rabbit.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -33,7 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   bool reverse = false;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Color _color = Colors.white;
 
     return Scaffold(
-       backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.

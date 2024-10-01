@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rabbit_pic/rabbit.dart';
 
 class Rabbit2 extends CustomPainter {
-  Rabbit2({this.colorWhite, this.revers});
+  Rabbit2({required this.colorWhite, this.revers = false});
 
   bool revers = false;
   final Color colorWhite;
@@ -18,20 +17,19 @@ class Rabbit2 extends CustomPainter {
     print("1");
     if (revers) {
       print("2");
-      _color =Color(0xffb3907d);
-      _earColor=Colors.white;
-   //   Rabbit(revers: true);
-
+      _color = Color(0xffb3907d);
+      _earColor = Colors.white;
+      //   Rabbit(revers: true);
     } else {
       print("3");
-      _color =Colors.white;
-      _earColor=Color(0xffE5C5A2);
+      _color = Colors.white;
+      _earColor = Color(0xffE5C5A2);
     }
     print("4");
-    fillbody(canvas, size,_color);
+    fillbody(canvas, size, _color);
   }
 
-  fillbody(Canvas canvas, Size size,Color color) {
+  fillbody(Canvas canvas, Size size, Color color) {
     print("5");
     var x = size.width;
     var y = size.height;
@@ -96,11 +94,9 @@ class Rabbit2 extends CustomPainter {
     path.quadraticBezierTo(x * 0.2, y * 0.36, x * 0.175, y * 0.35);
     path.quadraticBezierTo(x * 0.05, y * 0.3, x * 0.1, y * .28);
 
-
-
     canvas.drawPath(path, pathPaint2);
     outerLinePath(canvas, size);
-   // innerEar(canvas, size);
+    // innerEar(canvas, size);
     eye(canvas, size);
     canvas.drawCircle(Offset(x * 0.509, y * 0.433), 9.8, pathPaint);
   }
@@ -363,5 +359,4 @@ class Rabbit2 extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) =>
       (oldDelegate as Rabbit2).revers != revers;
 // TODO: implement shouldRepaint
-
 }

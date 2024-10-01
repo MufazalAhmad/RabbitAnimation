@@ -2,10 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Rabbit extends CustomPainter {
-  Rabbit({this.colorWhite, this.revers});
+  Rabbit({this.revers = false});
 
-  bool revers = false;
-  final Color colorWhite;
+  final bool revers;
   Color _color = Colors.white;
   Color _earColor = Color(0xffE5C5A2);
   @override
@@ -16,20 +15,18 @@ class Rabbit extends CustomPainter {
     print("1");
     if (revers) {
       print("2");
-      _color =Color(0xffE5C5A2);
-      _earColor=Color(0xffE5C5A2);          //Color(0xffE5C5A2);
-      fillBody(canvas, size,Colors.white);
-
+      _color = Color(0xffE5C5A2);
+      _earColor = Color(0xffE5C5A2); //Color(0xffE5C5A2);
+      fillBody(canvas, size, Colors.white);
     } else {
       print("3");
-      _color =Colors.white;
-      _earColor=Color(0xffE5C5A2);
-      fillBody2(canvas, size,Colors.white);
+      _color = Colors.white;
+      _earColor = Color(0xffE5C5A2);
+      fillBody2(canvas, size, Colors.white);
     }
-
   }
 
-  fillBody(Canvas canvas, Size size,Color color) {
+  fillBody(Canvas canvas, Size size, Color color) {
     var x = size.width;
     var y = size.height;
 
@@ -358,9 +355,10 @@ class Rabbit extends CustomPainter {
     path2.close();
     canvas.drawPath(path2, pathPaint2);
   }
-                                                 ///        Rabbit 2           \\\\
 
-  fillBody2(Canvas canvas, Size size,Color color) {
+  ///        Rabbit 2           \\\\
+
+  fillBody2(Canvas canvas, Size size, Color color) {
     print("5");
     var x = size.width;
     var y = size.height;
@@ -391,8 +389,8 @@ class Rabbit extends CustomPainter {
     ///  Right ear
     path.quadraticBezierTo(x * 0.459, y * .22, x * 0.63, y * 0.14);
     path.quadraticBezierTo(x * 0.695, y * 0.11, x * 0.686, y * 0.15);
-   // path.quadraticBezierTo(x * 0.67, y * 0.16, x * 0.67, y * 0.16);
-   // path.quadraticBezierTo(x * 0.66, y * 0.17, x * 0.64, y * 0.19);
+    // path.quadraticBezierTo(x * 0.67, y * 0.16, x * 0.67, y * 0.16);
+    // path.quadraticBezierTo(x * 0.66, y * 0.17, x * 0.64, y * 0.19);
     path.quadraticBezierTo(x * 0.58, y * 0.26, x * 0.57, y * 0.295);
 
     ///   Right face start
@@ -424,8 +422,6 @@ class Rabbit extends CustomPainter {
     path.quadraticBezierTo(x * 0.28, y * 0.37, x * 0.25, y * 0.366);
     path.quadraticBezierTo(x * 0.2, y * 0.36, x * 0.175, y * 0.35);
     path.quadraticBezierTo(x * 0.05, y * 0.3, x * 0.1, y * .28);
-
-
 
     canvas.drawPath(path, pathPaint2);
     outerLinePath2(canvas, size);
@@ -648,5 +644,4 @@ class Rabbit extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) =>
       (oldDelegate as Rabbit).revers != revers;
 // TODO: implement shouldRepaint
-
 }
